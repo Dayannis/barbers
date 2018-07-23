@@ -49,18 +49,18 @@ class SaleController extends Controller
             'type'        => 'required|string',
             'name'        => 'required|string',
             'description' => 'required|string',
-            'price'      => 'required|string',
+            'price'       => 'regex:/^\d*(\.\d{1,2})?$/',
         ]);
 
         $data = [ 
-            'type' => $request->type,
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'worker_id' => Auth::user()->id
+            'type'          => $request->type,
+            'name'          => $request->name,
+            'description'   => $request->description,
+            'price'         => $request->price,
+            'worker_id'     => Auth::user()->id
         ];
 
-        //Create Section
+        //Create Sale
         $sale = $this->sale->create($data);
 
         return redirect()->route('sales.index');
@@ -108,17 +108,17 @@ class SaleController extends Controller
             'type'        => 'required|string',
             'name'        => 'required|string',
             'description' => 'required|string',
-            'price'      => 'required|string',
+            'price'       => 'regex:/^\d*(\.\d{1,2})?$/',
         ]);
 
         $sale = $this->sale->findOrFail($id);
 
         $data = [ 
-            'type' => $request->type,
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'worker_id' => Auth::user()->id
+            'type'          => $request->type,
+            'name'          => $request->name,
+            'description'   => $request->description,
+            'price'         => $request->price,
+            'worker_id'     => Auth::user()->id
         ];
 
         //Update Sale
