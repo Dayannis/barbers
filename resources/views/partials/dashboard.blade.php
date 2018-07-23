@@ -17,6 +17,7 @@
 					</div>
 				</div>
 			</div>
+			@if(Auth::user()->hasrole('administrator'))
 			<div class="col-md-3 animated bounceInUp">
 				<div class="row">
 					<div class="iconfo col-md-5">
@@ -59,6 +60,7 @@
 					</div>
 				</div>
 			</div>
+			@endif
 		</div>
 </div>
 @endsection

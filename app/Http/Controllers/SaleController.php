@@ -22,20 +22,44 @@ class SaleController extends Controller
     public function index()
     {
         if (Auth::user()->hasrole('administrator')) {
-            $sales = $this->sale->get();
+            $sales    = $this->sale->get();
+            $products = $this->sale->where('type', 'producto')->get();
+            $services = $this->sale->where('type', 'servicio')->get();
         }
         else{
-            $sales = $this->sale->where('worker_id', Auth::user()->id)->get();
+            $sales    = $this->sale->where('worker_id', Auth::user()->id)->get();
+            $products = $this->sale->where('worker_id', Auth::user()->id)->where('type', 'producto')->get();
+            $services = $this->sale->where('worker_id', Auth::user()->id)->where('type', 'servicio')->get();
         }
         
         $total = 0.00;
+        $totalp = 0.00;
+        $totals = 0.00;
 
         foreach ($sales as $sale) {
-            $value = $sale->price;
-            $total += $value; 
+            $v1 = $sale->price;
+            $total += $v1;
         }
 
-        return view('sales.index', compact('sales','total'));
+        foreach ($products as $product) {
+            $v2 = $product->price;
+            $totalp += $v2; 
+        }
+
+        foreach ($services as $service) {
+            $v3 = $service->price;
+            $totals += $v3; 
+        }
+
+        if (Auth::user()->hasrole('administrator')) {
+            $serv = ($totals*60)/100;
+            $profit = $totalp + $serv;
+        }
+        else{
+            $profit = ($totals*40)/100;
+        }
+
+        return view('sales.index', compact('sales','total', 'profit'));
     }
 
     /**
@@ -45,7 +69,12 @@ class SaleController extends Controller
      */
     public function create()
     {
-        return view('sales.create');
+        $types = [
+            'Producto' => 'Producto',
+            'Servicio' => 'Servicio'
+        ];
+
+        return view('sales.create', compact('types'));
     }
 
     /**
@@ -103,7 +132,12 @@ class SaleController extends Controller
     {
         $sale = $this->sale->findOrFail($id);
 
-        return view('sales.edit', compact('sale'));
+        $types = [
+            'Producto' => 'Producto',
+            'Servicio' => 'Servicio'
+        ];
+
+        return view('sales.edit', compact('sale', 'types'));
     }
 
     /**

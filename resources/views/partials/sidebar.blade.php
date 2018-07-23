@@ -27,13 +27,11 @@
         
         <a>
           <i class="fa fa-shopping-cart animated slideInLeft"></i> 
-          @role('administrator')
+          @if(Auth::user()->hasrole('administrator'))
           Ventas
-          @endrole
-          @role('worker')
+          @else
           Mis Ventas
-          @endrole
-
+          @endif
           <span class="fa fa-chevron-down"></span>
         </a>
         <ul class="nav child_menu">
