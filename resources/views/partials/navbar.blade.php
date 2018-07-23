@@ -17,7 +17,7 @@
 
                         <li>
                             <a href="{{ route('logout') }}">
-                                <i class="fa fa-sign-out pull-right"></i>@lang('app.logout')</a>
+                                <i class="fa fa-sign-out pull-right"></i>Salir</a>
                         </li>
                     </ul>
                 </li>
