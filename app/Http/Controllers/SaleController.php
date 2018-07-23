@@ -21,9 +21,21 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $sales = $this->sale->get();
+        if (Auth::user()->hasrole('administrator')) {
+            $sales = $this->sale->get();
+        }
+        else{
+            $sales = $this->sale->where('worker_id', Auth::user()->id)->get();
+        }
+        
+        $total = 0.00;
 
-        return view('sales.index', compact('sales'));
+        foreach ($sales as $sale) {
+            $value = $sale->price;
+            $total += $value; 
+        }
+
+        return view('sales.index', compact('sales','total'));
     }
 
     /**

@@ -10,6 +10,12 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Ventas</div>
                 <div class="panel-body">
+                    <strong style="float:right;"    >
+                                        Ingreso Total: 
+                                        <span class='usd-importe'>
+                                            {{$total}} $
+                                        </span>
+                    </strong>
                     <table class="table table-responsive table-striped data-table">
                         <thead>
                             <th>ID</th>
