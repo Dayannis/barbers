@@ -1,5 +1,5 @@
 @extends('layouts.app') 
-@section('title','Venta - '.config('app.name'))
+@section('title','Ventas - '.config('app.name'))
 @section('content')
 <div class="container">
     <div class="col-md-1 col-md-offset-11" style="margin-bottom:10px;">
