@@ -45,8 +45,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div style="padding-top: 40px;" class="row">
 			<div class="col-md-3 animated bounceInUp">
 				<div class="row">
 					<div class="iconfo col-md-5">
