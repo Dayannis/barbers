@@ -55,11 +55,11 @@
         </a>
         <ul class="nav child_menu">
           <li> 
-              <a href="#">
+              <a href="{{route('user.index')}}">
               <i class="fa fa-bars"></i>Lista de Usuarios</a>
           </li>
           <li>
-             <a href="#">
+             <a href="{{route('user.create')}}">
              <i class="fa fa-plus"></i>Agregar Usuarios</a>
           </li>
         </ul>
@@ -71,11 +71,11 @@
         </a>
         <ul class="nav child_menu">
           <li>
-              <a href="#">
+              <a href="{{route('role.index')}}">
               <i class="fa fa-bars"></i>Lista de Roles</a>
           </li>
           <li>
-              <a href="#">
+              <a href="{{route('role.create')}}">
               <i class="fa fa-plus"></i>Agregar Rol</a>
           </li>
         </ul>
@@ -87,11 +87,11 @@
         </a>
         <ul class="nav child_menu">
           <li>
-            <a href="#">
+            <a href="{{route('permission.index')}}">
               <i class="fa fa-bars"></i>Lista de Permisos</a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{route('permission.create')}}">
               <i class="fa fa-plus"></i>Agregar Permisos</a>
           </li>
         </ul>
