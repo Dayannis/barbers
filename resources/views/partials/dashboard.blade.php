@@ -27,7 +27,7 @@
 						<span style="font-size: 75px; color: #0094d0; padding: 7px;" class="fa fa-users animated infinite pulse"></span>
 					</div>
 					<div class="incofo2 col-md-10 text-center">
-						<a class="verm" href="{{ route('user.index') }}">Ver más<span class="glyi glyphicon glyphicon-circle-arrow-right"></span></a>
+						<a class="verm" href="#">Ver más<span class="glyi glyphicon glyphicon-circle-arrow-right"></span></a>
 					</div>
 				</div>
 			</div>
@@ -41,7 +41,7 @@
 						<span style="font-size: 75px; color: #0094d0; padding: 7px;" class="fa fa-circle animated infinite pulse"></span>
 					</div>
 					<div class="incofo2 col-md-10 text-center">
-						<a class="verm" href="{{ route('role.index') }}">Ver más<span class="glyi glyphicon glyphicon-circle-arrow-right"></span></a>
+						<a class="verm" href="#">Ver más<span class="glyi glyphicon glyphicon-circle-arrow-right"></span></a>
 					</div>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 						<span style="font-size: 75px; color: #0094d0; padding: 7px;" class="fa fa-cogs animated infinite pulse"></span>
 					</div>
 					<div class="incofo2 col-md-10 text-center">
-						<a class="verm" href="permission.index">Ver más<span class="glyi glyphicon glyphicon-circle-arrow-right"></span></a>
+						<a class="verm" href="#">Ver más<span class="glyi glyphicon glyphicon-circle-arrow-right"></span></a>
 					</div>
 				</div>
 			</div>
